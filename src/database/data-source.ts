@@ -18,7 +18,7 @@ export default new DataSource({
   password: process.env.DB_PASSWORD ?? 'postgres',
   database: process.env.DB_DATABASE ?? 'library',
   entities: [User, Book, BookCopy, LoanRequest, Loan, PenaltyType, Penalty],
-  migrations: ['src/database/migrations/*.ts'],
+  migrations: [`${__dirname}/migrations/*{.ts,.js}`],
   synchronize: false,
   ssl: sslEnabled
     ? {
