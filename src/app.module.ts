@@ -27,6 +27,13 @@ import { UsersModule } from './users/users.module';
         database: config.get<string>('DB_DATABASE', 'library'),
         autoLoadEntities: true,
         synchronize: false,
+        ssl:
+          config.get<string>('DB_SSL') === 'true'
+            ? {
+                rejectUnauthorized:
+                  config.get<string>('DB_SSL_REJECT_UNAUTHORIZED') !== 'false',
+              }
+            : false,
       }),
     }),
     AuthModule,

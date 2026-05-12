@@ -8,6 +8,8 @@ import { PenaltyType } from '../penalty-types/entities/penalty-type.entity';
 import { Penalty } from '../penalties/entities/penalty.entity';
 import { User } from '../users/entities/user.entity';
 
+const sslEnabled = process.env.DB_SSL === 'true';
+
 export default new DataSource({
   type: 'postgres',
   host: process.env.DB_HOST ?? 'localhost',
@@ -18,4 +20,9 @@ export default new DataSource({
   entities: [User, Book, BookCopy, LoanRequest, Loan, PenaltyType, Penalty],
   migrations: ['src/database/migrations/*.ts'],
   synchronize: false,
+  ssl: sslEnabled
+    ? {
+        rejectUnauthorized: process.env.DB_SSL_REJECT_UNAUTHORIZED !== 'false',
+      }
+    : false,
 });
