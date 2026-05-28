@@ -9,6 +9,7 @@ import { LoansModule } from './loans/loans.module';
 import { PenaltiesModule } from './penalties/penalties.module';
 import { PenaltyTypesModule } from './penalty-types/penalty-types.module';
 import { StudentFlowModule } from './student-flow/student-flow.module';
+import { UploadsModule } from './uploads/uploads.module';
 import { UsersModule } from './users/users.module';
 
 @Module({
@@ -45,6 +46,7 @@ import { UsersModule } from './users/users.module';
     PenaltyTypesModule,
     PenaltiesModule,
     StudentFlowModule,
+    UploadsModule,
   ],
 })
 export class AppModule {}
