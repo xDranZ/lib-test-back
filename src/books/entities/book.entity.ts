@@ -22,7 +22,7 @@ export class Book {
   @Column()
   author: string;
 
-  @Column({ name: 'cover_image_key', nullable: true })
+  @Column({ name: 'cover_image_key', type: 'varchar', nullable: true })
   coverImageKey: string | null;
 
   @OneToMany(() => BookCopy, (bookCopy) => bookCopy.book)
