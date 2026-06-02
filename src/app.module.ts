@@ -6,6 +6,7 @@ import { BooksModule } from './books/books.module';
 import { BookCopiesModule } from './book-copies/book-copies.module';
 import { LoanRequestsModule } from './loan-requests/loan-requests.module';
 import { LoansModule } from './loans/loans.module';
+import { EventsModule } from './events/events.module';
 import { PenaltiesModule } from './penalties/penalties.module';
 import { PenaltyTypesModule } from './penalty-types/penalty-types.module';
 import { StudentFlowModule } from './student-flow/student-flow.module';
@@ -41,6 +42,7 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     BooksModule,
     BookCopiesModule,
+    EventsModule,
     LoanRequestsModule,
     LoansModule,
     PenaltyTypesModule,
